@@ -121,26 +121,6 @@
   .a-out { background: var(--code-bg); border: 1px solid var(--border); color: var(--code-text); }
   .legend { font-size: 14px; color: var(--muted); }
 
-  /* terminal & repl */
-  .term {
-    background: #221d18; color: #f1e8da; border-radius: 12px; overflow: hidden; margin: 14px 0;
-    border: 1px solid #3f362c; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 15px;
-  }
-  .term .bar { background: #2e2822; padding: 6px 12px; font-size: 12px; color: #b3a591; display: flex; gap: 6px; align-items: center; }
-  .term .dot { width: 10px; height: 10px; border-radius: 50%; background: #ff6b6b; }
-  .term .dot:nth-child(2) { background: #ffd166; } .term .dot:nth-child(3) { background: #6fe3a1; }
-  .term .screen { padding: 12px 14px; height: 260px; overflow-y: auto; white-space: pre-wrap; word-break: break-word; }
-  .term .line { margin: 0; }
-  .term .p { color: #6fe3a1; } .term .err { color: #ff8f86; } .term .dim { color: #a89b88; }
-  .term .inputrow { display: flex; gap: 8px; padding: 8px 14px 12px; border-top: 1px solid #3f362c; align-items: center; }
-  .term .inputrow .pr { color: #6fe3a1; white-space: nowrap; }
-  .term input {
-    flex: 1; background: transparent; border: none; outline: none; color: #fff; font: inherit; min-width: 0;
-  }
-  .term .dir { color: #f0b46a; font-weight: 600; }
-  .term .screen { scrollbar-width: thin; }
-  .term:focus-within { border-color: #d98a4e; box-shadow: 0 0 0 2px rgba(217,138,78,.35); }
-  .fstree { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 14px; line-height: 1.7; max-height: 220px; overflow: auto; }
   .tasks { list-style: none; padding: 0; margin: 10px 0; }
   .tasks li { padding: 6px 10px; border: 1px solid var(--border); border-radius: 8px; margin: 6px 0; display: flex; gap: 10px; align-items: center; background: var(--card); }
   .tasks li .ck { width: 22px; height: 22px; border-radius: 50%; border: 2px solid var(--border); display: grid; place-items: center; font-size: 13px; flex: none; }
@@ -195,13 +175,6 @@
   .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
 
   /* ---- additions for Class 2 ---- */
-  .term .inputrow { flex-wrap: wrap; }
-  .term .inputrow .pr { white-space: normal; word-break: break-all; }
-  .term .inputrow input { flex: 1 1 140px; }
-  .term .screen { height: 280px; }
-  .term .warnline { color: #f0b46a; }
-  .fstree .gitdim { color: var(--muted); }
-
   /* sorter */
   .sorter { margin: 14px 0; }
   .sorter .pool { display: flex; gap: 8px; flex-wrap: wrap; min-height: 44px; padding: 10px; border: 1px dashed var(--border); border-radius: 10px; background: var(--card); }
@@ -273,9 +246,9 @@
   <h1>Your Workbench: Toolchain &amp; Git Basics</h1>
   <p class="lead">Get your tools ready, and meet the ideas behind a project that anyone can run: a project folder, your own Python, safe settings and Git.</p>
   <div class="pills">
-    <span class="pill">About 45 to 60 minutes</span>
+    <span class="pill">About 40 minutes</span>
     <span class="pill">Install four tools</span>
-    <span class="pill">Two practice terminals inside</span>
+    <span class="pill">Quick games and a short quiz</span>
   </div>
 </header>
 
@@ -293,17 +266,18 @@
         <li>Understand why "works on my machine" is a problem</li>
         <li>Check or install Python, Git and VS Code</li>
         <li>Create a free GitHub account</li>
-        <li>Learn how a project folder is laid out</li>
-        <li>Practise a virtual environment and <code>pip</code> in a pretend terminal</li>
-        <li>Learn what a secret is and what to keep out of Git</li>
-        <li>Practise your first Git commands in a pretend terminal</li>
+        <li>Preview how a project folder is laid out</li>
+        <li>Meet virtual environments, in words and pictures</li>
+        <li>Learn what a secret is, and sort a few items</li>
+        <li>Meet the four places a change travels in Git</li>
       </ul>
     </div>
     <div class="panel">
       <h4>You do not need to</h4>
       <ul>
-        <li>Memorise commands. You will use them again in class</li>
+        <li>Memorise commands. You will type them for real in class</li>
         <li>Build the project yet. That happens live in Class 2</li>
+        <li>Practise <code>pip</code> or Git commands. The post-read has practice terminals for that, after class</li>
         <li>Know about branches, pull requests or Docker</li>
         <li>Call any AI model. That starts in Class 3</li>
       </ul>
@@ -311,7 +285,7 @@
   </div>
 
   <div class="callout tip"><strong class="t">How to use this page</strong>
-    Go in order. Section 3 is the most important one to finish <strong>before</strong> class, because it installs your tools. Type in the practice boxes, because typing helps you remember. Use the <em>Mark as done</em> button at the end of each section. If a step fails, write down what you saw and tell your instructor. Please do not spend more than 15 minutes stuck on any one thing.
+    Go in order. Section 3 is the most important one to finish <strong>before</strong> class, because it installs your tools. Click through the small interactive boxes, because it helps you remember. Use the <em>Mark as done</em> button at the end of each section. If a step fails, write down what you saw and tell your instructor. Please do not spend more than 15 minutes stuck on any one thing.
   </div>
   <div class="donebar"><button class="donebtn" data-done="s1" aria-pressed="false">Mark as done</button></div>
 </section>
@@ -413,14 +387,7 @@ sudo apt install git</pre></div>
   <div class="codeblock"><div class="label">Run these two lines, with your own details</div><button class="copy">Copy</button><pre>git config --global user.name "Your Name"
 git config --global user.email "you@example.com"</pre></div>
 
-  <h3>3.3 VS Code and its Python extension</h3>
-  <ol class="steps">
-    <li>Download VS Code from <span class="placeholder"><a href="https://code.visualstudio.com/download" style="text-decoration: none; color: inherit;">code.visualstudio.com/download</a></span> and install it with the defaults.</li>
-    <li>Open VS Code. Click the <strong>Extensions</strong> icon on the left (four small squares), search for <strong>Python</strong>, and install the one published by <strong>Microsoft</strong>.</li>
-    <li>You will use VS Code's built-in terminal in class: <strong>Terminal</strong> menu, then <strong>New Terminal</strong>.</li>
-  </ol>
-
-  <h3>3.4 A GitHub account</h3>
+  <h3>3.3 A GitHub account</h3>
   <p>GitHub is a website that stores a copy of your project so other people can get it. Git is the <em>tool</em>; GitHub is the <em>place</em>.</p>
   <ol class="steps">
     <li>Go to <span class="placeholder"><a href="https://github.com/signup" style="text-decoration: none; color: inherit;">github.com/signup</a></span> and create a <strong>free</strong> account.</li>
@@ -472,23 +439,7 @@ git config --global user.name    # prints your name</pre></div>
   </div>
 
   <h3>One job per file</h3>
-  <p>Inside <code>src/meridian_workbench/</code> your Class 1 file gets cut into small pieces. Each piece has one job, and a name that says what it is.</p>
-  <div class="tablewrap">
-  <table>
-    <tr><th>File</th><th>Its one job</th></tr>
-    <tr><td><code>loaders.py</code></td><td>Read <code>cases.csv</code> and <code>notes.json</code>. Nothing else.</td></tr>
-    <tr><td><code>rules.py</code></td><td>The decision: is this case closed, and how many days overdue is it?</td></tr>
-    <tr><td><code>results.py</code></td><td>Combine a case, its note and the rule outcome into one result.</td></tr>
-    <tr><td><code>pipeline.py</code></td><td>Run the steps in order: load, decide, save, report. This is your <code>main()</code> from Class 1.</td></tr>
-  </table>
-  </div>
-  <div class="callout tip"><strong class="t">Arrows only point one way</strong>
-    <code>pipeline</code> uses <code>loaders</code> and <code>results</code>. <code>results</code> uses <code>rules</code>. Nothing points back. If the rules read files, or loaders used the rules, everything tangles and a change in one place breaks another. A package is a folder of Python files that you can import, and a small file called <code>__init__.py</code> marks the folder as one.
-  </div>
-
-  <h3>Try it: put each file in its folder</h3>
-  <p>Click a file, then click the folder where it belongs.</p>
-  <div class="sorter" id="sortFolders"></div>
+  <p>Inside <code>src/meridian_workbench/</code> your Class 1 file gets cut into small pieces, each with one job and a name that says what it is: <code>loaders.py</code> reads files, <code>rules.py</code> decides, <code>results.py</code> builds a result and <code>pipeline.py</code> runs the steps in order. You will do the cutting together in class. The post-read has a matching game and the full explanation.</p>
   <div class="donebar"><button class="donebtn" data-done="s4" aria-pressed="false">Mark as done</button></div>
 </section>
 
@@ -542,42 +493,12 @@ source .venv/bin/activate</pre></div>
   </div>
   <p class="legend">Top: before activation. Bottom: after. Look for the <span style="color:#1f7a3a">green</span> <code>(.venv)</code> tag.</p>
 
-  <h3>pip, and why we pin versions</h3>
-  <p><code>pip</code> fetches packages: code that other people wrote and shared. Write <code>python -m pip</code> rather than <code>pip</code> on its own, because that way you are sure it belongs to the Python you are using. A <strong>pinned</strong> version uses two equals signs and fixes the exact release.</p>
-  <div class="codeblock"><button class="copy">Copy</button><pre>python -m pip install python-dotenv==1.0.1</pre></div>
-  <p>Without the number, pip installs the newest version on the day you run it. A colleague installing a month later may get something different, and a program that worked may quietly stop. Pinning is a promise that everyone gets the same thing.</p>
-  <p>Lists get long, so we write them in a file called <code>requirements.txt</code>, and install the whole list in one go. Class 2 also introduces <code>pyproject.toml</code>, the file that describes the project itself: its name, the Python it needs and the packages it depends on. You will read one together in class.</p>
-  <div class="codeblock"><div class="label">requirements.txt</div><button class="copy">Copy</button><pre>-e .
-python-dotenv==1.0.1
-ruff==0.6.9</pre></div>
-  <div class="codeblock"><button class="copy">Copy</button><pre>python -m pip install -r requirements.txt</pre></div>
-  <p class="small muted">The line <code>-e .</code> installs your own project in "editable" mode, so Python can find your code from anywhere and your edits take effect straight away. <code>ruff</code> is a checker that reads your code and spots small mistakes.</p>
+  <h3>pip, in one paragraph</h3>
+  <p><code>pip</code> fetches packages: code that other people wrote and shared. Write <code>python -m pip</code> rather than <code>pip</code> on its own, so you are sure it belongs to the Python you are using. In class you will write the exact versions your project needs into a file called <code>requirements.txt</code> (this is called <strong>pinning</strong>) and meet <code>pyproject.toml</code>, the file that describes the project itself. The post-read explains both.</p>
 
   <div class="callout warn"><strong class="t">The most common mistake</strong>
-    Forgetting to activate. If your prompt has no <code>(.venv)</code> and you run <code>pip install</code>, the package goes into your computer's global Python, not into the project. You will see this in the practice terminal below.
+    Forgetting to activate. If your prompt has no <code>(.venv)</code> and you run <code>pip install</code>, the package goes into your computer's global Python, not into the project. You will see this happen in class, and the post-read has a practice terminal where you can try it safely.
   </div>
-
-  <h3>Try it: a practice terminal</h3>
-  <p>This is a pretend terminal in your browser. Nothing you type here can break anything. Complete the seven tasks. Type <code>help</code> if you get stuck, and press Tab to complete names.</p>
-  <ul class="tasks" id="tasksA">
-    <li data-task="cd"><span class="ck"></span>Move into the project: <code>cd meridian-workbench</code></li>
-    <li data-task="venv"><span class="ck"></span>Create the environment: <code>python -m venv .venv</code> (<code>python3</code> or <code>py</code> also work)</li>
-    <li data-task="act"><span class="ck"></span>Activate it. Watch the prompt change</li>
-    <li data-task="prove"><span class="ck"></span>Prove it: <code>python -c "import sys; print(sys.prefix)"</code></li>
-    <li data-task="install"><span class="ck"></span>Install from the file: <code>python -m pip install -r requirements.txt</code></li>
-    <li data-task="list"><span class="ck"></span>See what is installed: <code>python -m pip list</code></li>
-    <li data-task="deact"><span class="ck"></span>Leave the environment: <code>deactivate</code></li>
-  </ul>
-  <div class="term" id="termA">
-    <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span style="margin-left:8px">practice terminal: virtual environment</span></div>
-    <div class="screen" aria-live="polite"></div>
-    <div class="inputrow"><span class="pr"></span><input autocomplete="off" spellcheck="false" aria-label="Terminal input"></div>
-  </div>
-  <div class="panel" style="margin:10px 0"><h4>Your folders, live</h4><div class="fstree" aria-label="Folder map" id="treeA"></div><p class="small muted" style="margin:6px 0 0">The highlighted folder is your current folder. Hidden names that start with a dot only show in <code>ls</code> if you add <code>-a</code>.</p></div>
-  <div class="callout tip"><strong class="t">Try the mistake on purpose</strong>
-    Reset the terminal, skip the activation, and run the install. Read what the terminal says afterwards. Then do it properly.
-  </div>
-  <div class="btnrow"><button class="btn ghost" id="resetA">Reset practice terminal</button></div>
   <div class="donebar"><button class="donebtn" data-done="s5" aria-pressed="false">Mark as done</button></div>
 </section>
 
@@ -596,48 +517,19 @@ ruff==0.6.9</pre></div>
   <div class="sorter" id="sortBins"></div>
 
   <h3>Three files you will meet</h3>
-  <p><strong><code>config/settings.toml</code></strong> holds settings. It is not secret, so it is shared. TOML is just a settings format: square brackets name a section, and <code>key = value</code> lines sit inside.</p>
-  <div class="codeblock"><div class="label">config/settings.toml</div><button class="copy">Copy</button><pre>[paths]
-data_dir = "data"
-output_dir = "outputs"
-
-[rules]
-batch_date = "2025-03-10"</pre></div>
-  <p><strong>Environment variables</strong> are named values that live in your terminal session. They can <em>override</em> the file for one run, without anyone editing a file. In class you will run the report for a different date this way.</p>
-  <p><strong><code>.env</code></strong> is a local file for your own machine. It can hold real values, so it is <strong>never shared</strong>. Next to it sits <strong><code>.env.example</code></strong>: a template with no real values, which <em>is</em> shared, so a stranger can see which variables exist.</p>
-  <div class="codeblock"><div class="label">.env.example (shared, no real values)</div><button class="copy">Copy</button><pre># Copy this file to .env for local use. Never commit .env.
-# MERIDIAN_BATCH_DATE=2025-03-10
-
-# Placeholder for a later class. Not used yet.
-MERIDIAN_LLM_API_KEY=</pre></div>
-
-  <h3>.gitignore: telling Git what to skip</h3>
-  <p>Git tracks everything in a folder unless you say otherwise. A file called <code>.gitignore</code> lists what to skip, one pattern per line. A name ending in <code>/</code> is a folder.</p>
-  <div class="codeblock"><div class="label">.gitignore</div><button class="copy">Copy</button><pre># Virtual environment
-.venv/
-
-# Secrets and local settings
-.env
-
-# Generated files
-outputs/
-
-# Python caches and build files
-__pycache__/
-*.pyc
-*.egg-info/</pre></div>
+  <ul>
+    <li><strong><code>config/settings.toml</code></strong>: the settings, such as the batch date. Not secret, so it is shared.</li>
+    <li><strong><code>.env</code></strong>: a local file on your own machine that can hold real values. It is <strong>never shared</strong>. Next to it sits <strong><code>.env.example</code></strong>, a template with no real values, which <em>is</em> shared.</li>
+    <li><strong><code>.gitignore</code></strong>: a list of things Git must skip, such as <code>.env</code> and <code>.venv/</code>.</li>
+  </ul>
+  <p>You will write all three in class. The post-read shows each file in full, and has a game where you decide what to commit and what to ignore.</p>
 
   <div class="callout warn"><strong class="t">A secret in Git is a secret forever</strong>
     <ul>
       <li>A secret in code travels with every copy of the project and stays in the history. "The repository is private" is not a safe plan, because access changes.</li>
-      <li><code>.gitignore</code> only stops files Git is not already tracking. If a key was ever committed, adding it to <code>.gitignore</code> later does nothing. Treat it as leaked and replace it.</li>
       <li>In Class 2 there is no real secret anywhere. The key line is an empty placeholder. That is the safe way to practise.</li>
     </ul>
   </div>
-
-  <h3>Try it: commit it or ignore it?</h3>
-  <p>For each file in the project, decide whether it goes into Git or stays out.</p>
-  <div class="sorter" id="sortGit"></div>
   <div class="donebar"><button class="donebtn" data-done="s6" aria-pressed="false">Mark as done</button></div>
 </section>
 
@@ -658,54 +550,30 @@ __pycache__/
     A group photo. You choose who stands in the frame (<code>git add</code>), take the photo with a caption (<code>git commit</code>), and only then post it to the shared album (<code>git push</code>). Teammates download the album with <code>git pull</code>.
   </div>
 
-  <h3>The commands you will use</h3>
+  <h3>The commands you will meet</h3>
   <div class="tablewrap">
   <table>
-    <tr><th>What you want</th><th>Command</th><th>Notes</th></tr>
-    <tr><td>Start a repository</td><td><code>git init -b main</code></td><td>Creates a hidden <code>.git</code> folder that holds the history. Once per project.</td></tr>
-    <tr><td>Ask what is going on</td><td><code>git status</code></td><td>Your best friend. Run it before and after everything.</td></tr>
-    <tr><td>Stage changes</td><td><code>git add .</code></td><td>The dot means "everything here". Read the list afterwards.</td></tr>
-    <tr><td>Save a snapshot</td><td><code>git commit -m "message"</code></td><td>The message is for the next person who reads the history.</td></tr>
-    <tr><td>See the history</td><td><code>git log --oneline</code></td><td>One line per snapshot.</td></tr>
-    <tr><td>Link to GitHub</td><td><code>git remote add origin URL</code></td><td>Saves the online address under the short name <code>origin</code>.</td></tr>
-    <tr><td>Send to GitHub</td><td><code>git push -u origin main</code></td><td><code>-u</code> remembers the link, so later <code>git push</code> is enough.</td></tr>
-    <tr><td>Copy a project once</td><td><code>git clone URL</code></td><td>A full copy with history. Done once, by your partner.</td></tr>
-    <tr><td>Get new changes</td><td><code>git pull</code></td><td>Done often.</td></tr>
+    <tr><th>What you want</th><th>Command</th></tr>
+    <tr><td>Ask what is going on</td><td><code>git status</code>. Your best friend. Run it before and after everything.</td></tr>
+    <tr><td>Stage changes</td><td><code>git add .</code></td></tr>
+    <tr><td>Save a snapshot</td><td><code>git commit -m "message"</code></td></tr>
+    <tr><td>Send to GitHub</td><td><code>git push</code></td></tr>
+    <tr><td>Copy a project once</td><td><code>git clone URL</code></td></tr>
+    <tr><td>Get new changes</td><td><code>git pull</code></td></tr>
   </table>
   </div>
+  <p class="small muted">There are a few more, such as <code>git init</code> and <code>git remote add</code>. We type them together in class, and the post-read lists them all.</p>
   <div class="callout ok"><strong class="t">The rhythm to remember</strong>
     <strong>Clone once, pull often. Commit, then push.</strong> And always run <code>git status</code> before you commit, to check that nothing secret is on the list.
   </div>
 
-  <h3>Try it: your first commit</h3>
-  <p>The practice terminal below starts inside the project folder. It contains a secret file (<code>.env</code>) and a virtual environment (<code>.venv</code>) on purpose. Your job is to commit the project <strong>without</strong> them. This pretend Git never contacts the internet.</p>
-  <ul class="tasks" id="tasksB">
-    <li data-task="cfg"><span class="ck"></span>Tell Git who you are: <code>git config --global user.name "Your Name"</code> and <code>git config --global user.email "you@example.com"</code></li>
-    <li data-task="init"><span class="ck"></span>Start the repository: <code>git init -b main</code></li>
-    <li data-task="status"><span class="ck"></span>Look: <code>git status</code>. Do you see <code>.env</code> and <code>.venv/</code> in the list?</li>
-    <li data-task="ignore"><span class="ck"></span>Ignore them. Write both into <code>.gitignore</code>: <code>echo ".venv/" &gt; .gitignore</code>, then <code>echo ".env" &gt;&gt; .gitignore</code></li>
-    <li data-task="add"><span class="ck"></span>Stage everything safe: <code>git add .</code>, then check with <code>git status</code></li>
-    <li data-task="commit"><span class="ck"></span>Save the snapshot: <code>git commit -m "Create Workbench V0"</code></li>
-    <li data-task="log"><span class="ck"></span>See it in the history: <code>git log --oneline</code></li>
-    <li data-task="push"><span class="ck"></span>Publish: <code>git remote add origin https://github.com/your-username/meridian-workbench.git</code>, then <code>git push -u origin main</code></li>
-  </ul>
-  <div class="term" id="termB">
-    <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span style="margin-left:8px">practice terminal: Git</span></div>
-    <div class="screen" aria-live="polite"></div>
-    <div class="inputrow"><span class="pr"></span><input autocomplete="off" spellcheck="false" aria-label="Terminal input"></div>
-  </div>
-  <div class="panel" style="margin:10px 0"><h4>Your folders, live</h4><div class="fstree" aria-label="Folder map" id="treeB"></div><p class="small muted" style="margin:6px 0 0">Folders such as <code>.git</code> and <code>.venv</code> are shown closed, to keep the map short.</p></div>
-  <div class="callout tip"><strong class="t">Try the mistake on purpose</strong>
-    Reset the terminal and run <code>git add .</code> <em>before</em> you create <code>.gitignore</code>. Look at what got staged. This is why we always read the status list first.
-  </div>
-  <div class="btnrow"><button class="btn ghost" id="resetB">Reset practice terminal</button></div>
   <div class="donebar"><button class="donebtn" data-done="s7" aria-pressed="false">Mark as done</button></div>
 </section>
 
 <!-- ================= 8 CHECK ================= -->
 <section class="card" id="s8">
   <h2><span class="num">8.</span> Check yourself</h2>
-  <p>Seven quick questions. They are not graded. They simply show you what to look at again. You can retry as often as you like.</p>
+  <p>Five quick questions. They are not graded. They simply show you what to look at again. You can retry as often as you like.</p>
   <div class="quiz" id="finalQuiz"></div>
   <div class="score" id="finalScore"></div>
 
@@ -716,13 +584,13 @@ __pycache__/
     <li data-check="3"><span class="ck"></span>I ran the two <code>git config --global</code> lines with my own name and email</li>
     <li data-check="4"><span class="ck"></span>VS Code is installed with the Microsoft Python extension</li>
     <li data-check="5"><span class="ck"></span>I have a GitHub account and I confirmed my email address</li>
-    <li data-check="6"><span class="ck"></span>I finished both practice terminals</li>
+    <li data-check="6"><span class="ck"></span>I tried the sorting game and answered the five questions</li>
     <li data-check="7"><span class="ck"></span>I have the Class 1 program and its three data files ready</li>
   </ul>
   <p class="small muted">Click an item to tick it.</p>
 
   <div class="callout ok"><strong class="t">What happens next</strong>
-    In Class 2 you will build all of this for real: a project folder, a virtual environment, pinned packages, settings, a first Git commit pushed to GitHub, and a README that a partner follows to run your program. This page was only your first look. Send your instructor a note if any step above did not work, or if anything felt unclear.
+    In Class 2 you will build all of this for real: a project folder, a virtual environment, pinned packages, settings, a first Git commit pushed to GitHub, and a README that a partner follows to run your program. This page was only your first look. After class, the post-read gives you the full repository, a cheat sheet, practice terminals and take-home tasks. Send your instructor a note if any step above did not work, or if anything felt unclear.
   </div>
   <div class="donebar"><button class="donebtn" data-done="s8" aria-pressed="false">Mark as done</button></div>
 </section>
@@ -879,20 +747,6 @@ __pycache__/
     });
     el.appendChild(pool); el.appendChild(hint); el.appendChild(grid);
   }
-  sorter($('#sortFolders'), [
-    { k: 'src', label: 'src/', sub: 'the program' }, { k: 'tests', label: 'tests/', sub: 'proof it works' }, { k: 'data', label: 'data/', sub: 'raw inputs' },
-    { k: 'config', label: 'config/', sub: 'settings' }, { k: 'fixtures', label: 'fixtures/', sub: 'recorded responses' }, { k: 'outputs', label: 'outputs/', sub: 'generated results' }
-  ], [
-    { t: 'rules.py', bin: 'src', why: 'It is part of the program, so it lives in src/meridian_workbench.', hint: 'Is it the program, an input, or a result?' },
-    { t: 'check_rules.py', bin: 'tests', why: 'It checks that the rules still work.', hint: 'It proves something works.' },
-    { t: 'cases.csv', bin: 'data', why: 'It is a raw input file.', hint: 'It is an input the program reads.' },
-    { t: 'settings.toml', bin: 'config', why: 'Settings that change between runs live in config/.', hint: 'It holds values that can change between runs.' },
-    { t: 'recorded_responses.json', bin: 'fixtures', why: 'Saved model responses are fixtures.', hint: 'It is a saved stand-in for a model answer.' },
-    { t: 'attention_report.json', bin: 'outputs', why: 'It is produced by the program and can be rebuilt.', hint: 'The program creates it.' },
-    { t: 'loaders.py', bin: 'src', why: 'It is program code that reads the data files.', hint: 'Is it the program, an input, or a result?' },
-    { t: 'notes.json', bin: 'data', why: 'It is a raw input file.', hint: 'It is an input the program reads.' }
-  ], false, 'This is the layout you will build in class.');
-
   sorter($('#sortBins'), [
     { k: 'rules', label: 'Rules', sub: 'lives in code' }, { k: 'settings', label: 'Settings', sub: 'lives in a file' }, { k: 'secrets', label: 'Secrets', sub: 'never in Git' }
   ], [
@@ -904,642 +758,6 @@ __pycache__/
     { t: 'AI mode: recorded or live', bin: 'settings', why: 'It changes between runs and is not secret.', hint: 'It changes between runs and is safe to share.' },
     { t: 'a password for a model service', bin: 'secrets', why: 'Passwords are secrets.', hint: 'It gives access to something.' }
   ], false, 'Rules in code, settings in a file, secrets in the environment.');
-
-  sorter($('#sortGit'), [
-    { k: 'commit', label: 'Commit it', sub: 'share it in Git' }, { k: 'ignore', label: 'Ignore it', sub: 'goes in .gitignore' }
-  ], [
-    { t: 'src/ (the code)', bin: 'commit', why: 'The code is the heart of the project.', hint: 'Without it there is no project.' },
-    { t: 'pyproject.toml', bin: 'commit', why: 'It describes the project, so everyone needs it.', hint: 'Everyone needs it to install the project.' },
-    { t: 'requirements.txt', bin: 'commit', why: 'It is the install list for a stranger.', hint: 'A stranger needs it to install.' },
-    { t: 'README.md', bin: 'commit', why: 'It is the front page with the steps.', hint: 'It is the instructions.' },
-    { t: 'config/settings.toml', bin: 'commit', why: 'It holds settings that are not secret.', hint: 'It is not secret and the project needs it.' },
-    { t: '.env.example', bin: 'commit', why: 'It is a template with no real values.', hint: 'It has no real values in it.' },
-    { t: '.venv/', bin: 'ignore', why: 'Anyone can rebuild it from requirements.txt.', hint: 'It can be rebuilt from a list.' },
-    { t: '.env', bin: 'ignore', why: 'It holds real local values and maybe a secret.', hint: 'It may hold a real secret.' },
-    { t: 'outputs/', bin: 'ignore', why: 'It is generated, so it can be rebuilt.', hint: 'The program can rebuild it.' },
-    { t: '__pycache__/', bin: 'ignore', why: 'Python creates it automatically, and it is just noise.', hint: 'Python makes it by itself.' }
-  ], true, 'Commit what a stranger needs. Ignore what can be rebuilt, and anything secret.');
-
-  /* =====================================================================
-     Practice terminals (virtual shell with simple venv, pip and git)
-     ===================================================================== */
-  var HOMEP = ['home', 'learner'], PROJ = ['home', 'learner', 'meridian-workbench'], PROJ_STR = '/home/learner/meridian-workbench';
-  var CMDS = ['cat', 'cd', 'clear', 'code', 'deactivate', 'echo', 'git', 'help', 'history', 'ls', 'mkdir', 'pip', 'pwd', 'py', 'python', 'python3', 'rm', 'source', 'touch', 'which', 'whoami'];
-  var PKG = { 'python-dotenv': ['1.0.0', '1.0.1'], 'ruff': ['0.6.8', '0.6.9'] };
-
-  function mkd(k) { return { type: 'dir', kids: Object.assign(Object.create(null), k || {}), t: Date.now() }; }
-  function mkf(c) { return { type: 'file', content: c || '', t: Date.now() }; }
-
-  function makeTerm(cfg) {
-    var box = $(cfg.box), scr = $('.screen', box), inp = $('input', box), prm = $('.pr', box), treeBox = $(cfg.tree), taskEl = $(cfg.tasks);
-    var S;
-    function newState() {
-      return { root: cfg.fs(), cwd: cfg.start.slice(), prev: cfg.start.slice(), hist: [], hi: 0, draft: '', lastTab: null, done: {}, active: false, pv: {}, pg: {},
-        g: { init: false, index: {}, head: {}, commits: [], remote: null, upstream: false, pushed: 0, name: '', email: '', warned: false, badCommit: false } };
-    }
-
-    /* --- paths --- */
-    function resolve(p) {
-      var base, parts;
-      p = (p || '').replace(/\\/g, '/');
-      if (p && p[0] === '/') { base = []; parts = p.split('/'); }
-      else if (p === '~' || p.indexOf('~/') === 0) { base = HOMEP.slice(); parts = p.slice(2).split('/'); }
-      else { base = S.cwd.slice(); parts = p.split('/'); }
-      parts.forEach(function (s) { if (!s || s === '.') return; if (s === '..') base.pop(); else base.push(s); });
-      return base;
-    }
-    function nodeAt(path) {
-      var n = S.root;
-      for (var i = 0; i < path.length; i++) { if (!n || n.type !== 'dir' || !(path[i] in n.kids)) return null; n = n.kids[path[i]]; }
-      return n;
-    }
-    function split(path) { var d = nodeAt(path.slice(0, -1)); return { dir: d && d.type === 'dir' ? d : null, name: path[path.length - 1] }; }
-    function eq(a, b) { return a.length === b.length && a.every(function (x, i) { return x === b[i]; }); }
-    function isPrefix(p, q) { return p.length <= q.length && p.every(function (x, i) { return x === q[i]; }); }
-    function pstr(path) { return '/' + path.join('/'); }
-    function disp(path) {
-      if (path.length >= 2 && path[0] === 'home' && path[1] === 'learner') { var r = path.slice(2); return r.length ? '~/' + r.join('/') : '~'; }
-      return pstr(path);
-    }
-    function promptText() { return (S.active ? '(.venv) ' : '') + 'learner@laptop:' + disp(S.cwd) + '$'; }
-
-    /* --- screen --- */
-    function out(t, cls) { var l = document.createElement('div'); l.className = 'line' + (cls ? ' ' + cls : ''); l.textContent = t === '' ? ' ' : t; scr.appendChild(l); scr.scrollTop = scr.scrollHeight; }
-    function outParts(parts, sep) {
-      var l = document.createElement('div'); l.className = 'line';
-      parts.forEach(function (it, i) {
-        if (i && sep) l.appendChild(document.createTextNode(sep));
-        var s = document.createElement('span'); if (it.dir) s.className = 'dir'; s.textContent = it.t; l.appendChild(s);
-      });
-      scr.appendChild(l); scr.scrollTop = scr.scrollHeight;
-    }
-    function echoLine(text) {
-      var l = document.createElement('div'); l.className = 'line';
-      var s = document.createElement('span'); s.className = 'p'; s.textContent = promptText();
-      l.appendChild(s); l.appendChild(document.createTextNode(' ' + text)); scr.appendChild(l); scr.scrollTop = scr.scrollHeight;
-    }
-    function mark(k) {
-      if (S.done[k]) return; S.done[k] = true;
-      var li = $('[data-task="' + k + '"]', taskEl); if (!li) return;
-      li.classList.add('done'); $('.ck', li).textContent = '✓';
-      var all = cfg.taskIds.every(function (x) { return S.done[x]; });
-      if (all) out('All tasks done. Nicely done.', 'p');
-    }
-
-    /* --- live tree --- */
-    function renderTree() {
-      treeBox.textContent = '';
-      function row(label, depth, isDir, here) {
-        var d = document.createElement('div'); d.style.paddingLeft = (depth * 18) + 'px';
-        var s = document.createElement('span'); s.textContent = (isDir ? '▸ ' : '· ') + label;
-        if (here) { s.style.cssText = 'background:var(--accent-soft);color:var(--accent);font-weight:700;border-radius:6px;padding:1px 8px'; }
-        else if (isDir) { s.style.color = 'var(--accent)'; }
-        d.appendChild(s);
-        if (here) { var h = document.createElement('span'); h.className = 'muted small'; h.textContent = '   ← you are here'; d.appendChild(h); }
-        treeBox.appendChild(d);
-      }
-      function walk(node, path, depth) {
-        Object.keys(node.kids).sort().forEach(function (k) {
-          var n = node.kids[k], p = path.concat(k), isDir = n.type === 'dir';
-          row(k + (isDir ? '/' : ''), depth, isDir, isDir && eq(p, S.cwd));
-          if (isDir && k !== '.venv' && k !== '.git') walk(n, p, depth + 1);
-        });
-      }
-      var rp = HOMEP.slice();
-      row('~  (your home folder)', 0, true, eq(rp, S.cwd));
-      walk(nodeAt(rp), rp, 1);
-    }
-
-    function tokenize(s) {
-      var toks = [], cur = '', has = false, q = null, ch;
-      function flush() { if (has || cur) { toks.push({ v: cur, q: has }); } cur = ''; has = false; }
-      for (var i = 0; i < s.length; i++) {
-        ch = s[i];
-        if (q) { if (ch === q) q = null; else cur += ch; }
-        else if (ch === '"' || ch === "'") { q = ch; has = true; }
-        else if (ch === ' ' || ch === '\t') { flush(); }
-        else if (ch === '>') { flush(); if (s[i + 1] === '>') { toks.push({ v: '>>', op: true }); i++; } else toks.push({ v: '>', op: true }); }
-        else cur += ch;
-      }
-      if (q) return { err: 'unexpected EOF while looking for matching quote' };
-      flush(); return toks;
-    }
-    function readFile(tg, name) {
-      var n = nodeAt(resolve(tg));
-      if (!n) { out(name + ': ' + tg + ': No such file or directory', 'err'); return null; }
-      if (n.type === 'dir') { out(name + ': ' + tg + ': Is a directory', 'err'); return null; }
-      return n.content;
-    }
-    function linesOf(s) { if (!s) return []; var l = s.split('\n'); if (l[l.length - 1] === '') l.pop(); return l; }
-
-    /* --- python and pip --- */
-    function verOf(spec) { var m = spec.match(/^([A-Za-z0-9_.\-]+)(?:==(.+))?$/); return m ? { name: m[1].toLowerCase(), ver: m[2] || null } : null; }
-    function pipCmd(a, w) {
-      var store = S.active ? S.pv : S.pg, i;
-      if (a[0] === '--version') { w('pip 24.0 from ' + (S.active ? PROJ_STR + '/.venv/lib/python3.12/site-packages/pip' : '/usr/lib/python3/dist-packages/pip') + ' (python 3.12)'); return; }
-      if (a[0] === 'list' || a[0] === 'freeze') {
-        var names = Object.keys(store).sort();
-        if (a[0] === 'freeze') {
-          names.forEach(function (n) { w(n === 'meridian-workbench' ? '-e ' + PROJ_STR : n + '==' + store[n]); });
-          if (S.active && store['meridian-workbench']) w('(Notice the -e line above: a path that only exists on your machine. This is why requirements.txt is written by hand.)', 'dim');
-          return;
-        }
-        var rows = [['pip', '24.0']]; if (!S.active) rows.push(['setuptools', '69.5.1']);
-        names.forEach(function (n) { rows.push([n, store[n]]); });
-        rows.sort(function (x, y) { return x[0] < y[0] ? -1 : 1; });
-        w('Package            Version'); w('-----------------  -------');
-        rows.forEach(function (r) { w((r[0] + '                  ').slice(0, 19) + r[1]); });
-        if (S.active && store['python-dotenv']) mark('list');
-        else if (S.active) w('Only pip so far: a clean room. Install something first.', 'dim');
-        return;
-      }
-      if (a[0] !== 'install') { out('Unknown command: ' + a[0] + '. (This practice terminal knows install, list and freeze.)', 'err'); return; }
-      var reqs = [];
-      for (i = 1; i < a.length; i++) {
-        if (a[i] === '-r') {
-          var s = readFile(a[++i] || '', 'pip'); if (s === null) { out('ERROR: Could not open requirements file: [Errno 2] No such file or directory: \'' + a[i] + '\'', 'err'); return; }
-          linesOf(s).forEach(function (l) { l = l.trim(); if (l && l[0] !== '#') reqs.push(l); });
-        } else if (a[i] === '-e') { reqs.push('-e ' + (a[++i] || '')); }
-        else if (a[i][0] === '-') { continue; }
-        else reqs.push(a[i]);
-      }
-      if (!reqs.length) { out('ERROR: You must give at least one requirement to install', 'err'); return; }
-      var added = [], already = [], bad = false;
-      reqs.forEach(function (r) {
-        if (bad) return;
-        if (r.indexOf('-e') === 0) {
-          var tgt = r.slice(2).trim(), pn = nodeAt(resolve(tgt));
-          if (!pn || pn.type !== 'dir' || !pn.kids['pyproject.toml']) { out("ERROR: " + (tgt || '.') + " does not appear to be a Python project: neither 'setup.py' nor 'pyproject.toml' found.", 'err'); bad = true; return; }
-          if (store['meridian-workbench']) already.push('meridian-workbench'); else { store['meridian-workbench'] = '0.1.0'; added.push('meridian-workbench-0.1.0'); }
-          return;
-        }
-        var v = verOf(r);
-        if (!v || !PKG[v.name]) { out('ERROR: Could not find a version that satisfies the requirement ' + r + ' (from versions: none)', 'err'); out('ERROR: No matching distribution found for ' + r, 'err'); bad = true; return; }
-        var vers = PKG[v.name];
-        if (v.ver && vers.indexOf(v.ver) < 0) { out('ERROR: Could not find a version that satisfies the requirement ' + v.name + '==' + v.ver + ' (from versions: ' + vers.join(', ') + ')', 'err'); out('ERROR: No matching distribution found for ' + v.name + '==' + v.ver, 'err'); bad = true; return; }
-        var use = v.ver || vers[vers.length - 1];
-        if (store[v.name] === use) already.push(v.name); else { store[v.name] = use; added.push(v.name + '-' + use); }
-      });
-      if (bad) return;
-      already.forEach(function (n) { w('Requirement already satisfied: ' + n); });
-      if (added.length) w('Successfully installed ' + added.join(' '));
-      if (S.active) { if (added.length || already.length) mark('install'); }
-      else { w('Note: your prompt has no (.venv). That install went into your computer\'s global Python, not into the project. Activate first, next time.', 'warnline'); }
-    }
-    function pyCmd(c, a, w) {
-      if (a[0] === '--version' || a[0] === '-V') { w('Python 3.12.3'); return; }
-      if (a[0] === '-m' && a[1] === 'venv') {
-        var d = a[2];
-        if (!d) { out('usage: venv [-h] [--system-site-packages] ... ENV_DIR [ENV_DIR ...]', 'err'); return; }
-        var p = resolve(d), sp = split(p);
-        if (!sp.dir) { out("Error: [Errno 2] No such file or directory: '" + d + "'", 'err'); return; }
-        sp.dir.kids[sp.name] = mkd({ 'pyvenv.cfg': mkf('home = /usr/bin\nversion = 3.12.3\n'), bin: mkd({ python: mkf('') }), lib: mkd() });
-        if (eq(p, PROJ.concat('.venv'))) mark('venv');
-        else w('Created a virtual environment in ' + disp(p) + '. For this course it belongs inside meridian-workbench. (No output at all is normal when it works.)', 'dim');
-        return;
-      }
-      if (a[0] === '-m' && a[1] === 'pip') { pipCmd(a.slice(2), w); return; }
-      if (a[0] === '-m') { out('/usr/bin/python3: No module named ' + (a[1] || ''), 'err'); return; }
-      if (a[0] === '-c') {
-        if (a[1] === undefined) { out('Argument expected for the -c option', 'err'); return; }
-        if (/sys\.prefix/.test(a[1])) {
-          w(S.active ? PROJ_STR + '/.venv' : '/usr');
-          if (S.active) mark('prove');
-          else w('Not active: this is the global Python. The path should end in .venv.', 'dim');
-        } else { out('(This practice terminal only runs the sys.prefix example.)', 'dim'); }
-        return;
-      }
-      if (!a.length) { out('That would start the REPL. You do not need it here.', 'dim'); return; }
-      out('(This practice terminal cannot run files. Try the other commands.)', 'dim');
-    }
-    function activate(arg) {
-      var n = arg.replace(/\\/g, '/').replace(/^\.\//, '');
-      if (!/^\.venv\/(bin|scripts)\/activate(\.ps1|\.bat)?$/i.test(n)) { out('bash: ' + arg + ': No such file or directory', 'err'); return; }
-      var v = nodeAt(resolve('.venv'));
-      if (!v || v.type !== 'dir') { out('bash: ' + n + ': No such file or directory', 'err'); out('Create the environment first: python -m venv .venv (from inside the project folder).', 'dim'); return; }
-      S.active = true; mark('act');
-    }
-
-    /* --- git --- */
-    function gitFiles() {
-      var res = [], n = nodeAt(PROJ); if (!n) return res;
-      (function w(node, pre) {
-        Object.keys(node.kids).sort().forEach(function (k) {
-          var c = node.kids[k], p = pre ? pre + '/' + k : k;
-          if (c.type === 'dir') { if (k === '.git') return; w(c, p); } else res.push({ path: p, content: c.content });
-        });
-      })(n, '');
-      return res;
-    }
-    function ignorePats() {
-      var n = nodeAt(PROJ.concat('.gitignore')); if (!n || n.type !== 'file') return [];
-      return n.content.split('\n').map(function (l) { return l.trim(); }).filter(function (l) { return l && l[0] !== '#'; });
-    }
-    function globRe(p) { return new RegExp('^' + p.replace(/[.+^${}()|[\]\\]/g, '\\$&').replace(/\*/g, '.*').replace(/\?/g, '.') + '$'); }
-    function isIgnored(path, pats) {
-      var comps = path.split('/');
-      for (var k = 0; k < pats.length; k++) {
-        var pat = pats[k], dirOnly = pat.slice(-1) === '/', p = dirOnly ? pat.slice(0, -1) : pat;
-        if (p[0] === '/') p = p.slice(1);
-        if (p.indexOf('/') > -1) { if (path === p || path.indexOf(p + '/') === 0) return true; continue; }
-        var re = globRe(p);
-        for (var i = 0; i < comps.length; i++) { if (dirOnly && i === comps.length - 1) continue; if (re.test(comps[i])) return true; }
-      }
-      return false;
-    }
-    function fakeId(s, n) { var h = 7; s = s + n; for (var i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) | 0; return (Math.abs(h).toString(16) + '1a2b3c4d').slice(0, 7); }
-    function inProject() { return isPrefix(PROJ, S.cwd); }
-    function secretsIn(map) { return Object.keys(map).filter(function (p) { return p === '.env' || p.indexOf('.venv/') === 0; }); }
-
-    function gitStatus(w) {
-      var G = S.g, files = gitFiles(), pats = ignorePats(), staged = [], unstaged = [], untracked = {};
-      Object.keys(G.index).forEach(function (p) {
-        if (!(p in G.head)) staged.push(['new file', p]); else if (G.head[p] !== G.index[p]) staged.push(['modified', p]);
-      });
-      var work = {}; files.forEach(function (f) { work[f.path] = f.content; });
-      Object.keys(G.index).forEach(function (p) { if (!(p in work)) unstaged.push(['deleted', p]); else if (work[p] !== G.index[p]) unstaged.push(['modified', p]); });
-      files.forEach(function (f) {
-        if (f.path in G.index) return;
-        if (isIgnored(f.path, pats)) return;
-        var top = f.path.indexOf('/') > -1 ? f.path.split('/')[0] + '/' : f.path; untracked[top] = true;
-      });
-      var ut = Object.keys(untracked).sort();
-      w('On branch main');
-      if (G.upstream) {
-        var ahead = G.commits.length - G.pushed;
-        if (ahead > 0) w("Your branch is ahead of 'origin/main' by " + ahead + ' commit' + (ahead > 1 ? 's' : '') + '.'); else w("Your branch is up to date with 'origin/main'.");
-        if (ahead > 0) w('  (use "git push" to publish your local commits)');
-      }
-      w('');
-      if (!G.commits.length) { w('No commits yet'); w(''); }
-      if (staged.length) {
-        w('Changes to be committed:');
-        w(G.commits.length ? '  (use "git restore --staged <file>..." to unstage)' : '  (use "git rm --cached <file>..." to unstage)');
-        staged.forEach(function (s) { w('        ' + (s[0] + ':   ').slice(0, 12) + s[1]); });
-        w('');
-      }
-      if (unstaged.length) {
-        w('Changes not staged for commit:'); w('  (use "git add <file>..." to update what will be committed)');
-        unstaged.forEach(function (s) { w('        ' + (s[0] + ':   ').slice(0, 12) + s[1]); }); w('');
-      }
-      if (ut.length) {
-        w('Untracked files:'); w('  (use "git add <file>..." to include in what will be committed)');
-        ut.forEach(function (u) { w('        ' + u, (u === '.env' || u === '.venv/') ? 'warnline' : ''); }); w('');
-        if (ut.indexOf('.env') > -1 || ut.indexOf('.venv/') > -1) w('Look at that list: .env (a secret) and .venv/ should NOT be there. Ignore them first.', 'warnline');
-      }
-      if (!staged.length && !unstaged.length) {
-        if (ut.length) w(G.commits.length ? 'nothing added to commit but untracked files present (use "git add" to track)' : 'nothing added to commit but untracked files present (use "git add" to track)');
-        else w(G.commits.length ? 'nothing to commit, working tree clean' : 'nothing to commit (create/copy files and use "git add" to track)');
-      } else if (staged.length) {
-        var sec = secretsIn(G.index); if (sec.length) w('Warning: ' + sec[0] + ' is staged. That is a secret or a rebuildable folder. Undo with: git reset', 'warnline');
-      }
-      return { staged: staged, ut: ut };
-    }
-
-    function gitCmd(a, w) {
-      var G = S.g, sub = a[0], i;
-      if (!sub) { w('usage: git [--version] <command> [<args>]'); return; }
-      if (sub === '--version' || sub === 'version') { w('git version 2.45.1'); return; }
-      if (sub === 'config') {
-        var args = a.slice(1).filter(function (x) { return x !== '--global' && x !== '--local'; });
-        if (args.length === 1) {
-          if (args[0] === 'user.name') { if (G.name) w(G.name); } else if (args[0] === 'user.email') { if (G.email) w(G.email); }
-          return;
-        }
-        if (args.length >= 2) {
-          if (args[0] === 'user.name') G.name = args.slice(1).join(' '); else if (args[0] === 'user.email') G.email = args[1];
-          if (G.name && G.email) mark('cfg');
-          return;
-        }
-        out('usage: git config [--global] <name> [<value>]', 'err'); return;
-      }
-      if (sub === 'init') {
-        if (!inProject()) { out('This practice terminal expects you to run git init inside meridian-workbench. Use cd first.', 'err'); return; }
-        var pn = nodeAt(PROJ);
-        if (G.init) { w('Reinitialized existing Git repository in ' + PROJ_STR + '/.git/'); return; }
-        G.init = true; pn.kids['.git'] = mkd({ HEAD: mkf('ref: refs/heads/main\n') });
-        w('Initialized empty Git repository in ' + PROJ_STR + '/.git/');
-        if (a.indexOf('-b') < 0) w('hint: Using "main" here. Add -b main to say it out loud: git init -b main', 'dim');
-        mark('init'); return;
-      }
-      if (sub === 'clone') { out('(In class you will clone your partner\'s repository for real. This practice terminal skips it.)', 'dim'); return; }
-      if (sub === 'help' || sub === '--help') { w('Try: init, status, add, commit, log, remote, push, pull, reset, config'); return; }
-      if (!G.init || !inProject()) { out('fatal: not a git repository (or any of the parent directories): .git', 'err'); if (!G.init) out('Hint: start with git init -b main inside the project folder.', 'dim'); return; }
-      if (sub === 'status') {
-        gitStatus(w);
-        mark('status'); return;
-      }
-      if (sub === 'add') {
-        var targets = a.slice(1).filter(function (x) { return x[0] !== '-'; });
-        if (!targets.length) { w('Nothing specified, nothing added.'); w('hint: Maybe you wanted to say \'git add .\'?', 'dim'); return; }
-        var files = gitFiles(), pats = ignorePats(), n = 0, ign = false;
-        targets.forEach(function (t) {
-          var rel = t === '.' ? '' : resolve(t).slice(PROJ.length).join('/'), hit = false;
-          files.forEach(function (f) {
-            if (rel === '' || f.path === rel || f.path.indexOf(rel + '/') === 0) {
-              hit = true;
-              if (isIgnored(f.path, pats)) { if (rel !== '') ign = true; return; }
-              G.index[f.path] = f.content; n++;
-            }
-          });
-          if (!hit) out("fatal: pathspec '" + t + "' did not match any files", 'err');
-        });
-        if (ign) { out('The following paths are ignored by one of your .gitignore files. Use -f if you really want to add them.', 'err'); }
-        var sec = secretsIn(G.index);
-        if (sec.length) out('Careful: you just staged ' + sec[0] + '. It holds a secret (or a folder anyone can rebuild). Undo with: git reset. Then add it to .gitignore.', 'warnline');
-        else if (n) { mark('add'); }
-        return;
-      }
-      if (sub === 'reset') { G.index = {}; Object.keys(G.head).forEach(function (k) { G.index[k] = G.head[k]; }); w('Staging area cleared. Nothing is staged now.'); return; }
-      if (sub === 'rm') {
-        var cached = a.indexOf('--cached') > -1, tg = a.filter(function (x, ix) { return ix > 0 && x[0] !== '-'; });
-        if (!cached) { out('(In this practice terminal use: git rm --cached <file>)', 'dim'); return; }
-        tg.forEach(function (t) { var rel = resolve(t).slice(PROJ.length).join('/'); Object.keys(G.index).forEach(function (k) { if (k === rel || k.indexOf(rel + '/') === 0) { delete G.index[k]; w("rm '" + k + "'"); } }); });
-        return;
-      }
-      if (sub === 'commit') {
-        var mi = a.indexOf('-m'), msg = mi > -1 ? a[mi + 1] : null;
-        if (!G.name || !G.email) {
-          out('Author identity unknown', 'err'); out('', ''); out('*** Please tell me who you are.', 'err'); out('', '');
-          out('Run', 'err'); out('  git config --global user.email "you@example.com"', 'err'); out('  git config --global user.name "Your Name"', 'err'); return;
-        }
-        if (!msg) { out('Git would now open a text editor for the message. In class we always write it with -m: git commit -m "your message"', 'dim'); return; }
-        var changes = 0; Object.keys(G.index).forEach(function (p) { if (G.head[p] !== G.index[p]) changes++; });
-        if (!changes) { w('nothing to commit, working tree clean'); return; }
-        var sec2 = secretsIn(G.index), isRoot = !G.commits.length;
-        G.head = {}; Object.keys(G.index).forEach(function (k) { G.head[k] = G.index[k]; });
-        var id = fakeId(msg, G.commits.length); G.commits.push({ id: id, msg: msg });
-        w('[main ' + (isRoot ? '(root-commit) ' : '') + id + '] ' + msg); w(' ' + changes + ' file' + (changes > 1 ? 's' : '') + ' changed');
-        if (sec2.length) { G.badCommit = true; out('Oh no: this commit contains ' + sec2[0] + '. In real life you would have to treat that secret as leaked and replace it. Use the reset button below and try again.', 'warnline'); }
-        else mark('commit');
-        return;
-      }
-      if (sub === 'log') {
-        if (!G.commits.length) { out("fatal: your current branch 'main' does not have any commits yet", 'err'); return; }
-        var oneline = a.indexOf('--oneline') > -1, last = G.commits.length - 1;
-        for (i = last; i >= 0; i--) {
-          var deco = []; if (i === last) deco.push('HEAD -> main'); if (G.upstream && i === G.pushed - 1) deco.push('origin/main');
-          var c = G.commits[i];
-          if (oneline) w(c.id + (deco.length ? ' (' + deco.join(', ') + ')' : '') + ' ' + c.msg);
-          else { w('commit ' + c.id + (deco.length ? ' (' + deco.join(', ') + ')' : '')); w('Author: ' + G.name + ' <' + G.email + '>'); w(''); w('    ' + c.msg); w(''); }
-        }
-        mark('log'); return;
-      }
-      if (sub === 'remote') {
-        if (a[1] === 'add') {
-          if (!a[2] || !a[3]) { out('usage: git remote add <name> <url>', 'err'); return; }
-          if (G.remote) { out('error: remote ' + a[2] + ' already exists.', 'err'); return; }
-          G.remote = a[3]; return;
-        }
-        if (a[1] === '-v' || !a[1]) { if (G.remote) { if (a[1]) { w('origin\t' + G.remote + ' (fetch)'); w('origin\t' + G.remote + ' (push)'); } else w('origin'); } return; }
-        out('usage: git remote add <name> <url>', 'err'); return;
-      }
-      if (sub === 'push') {
-        if (!G.remote) { out("fatal: No configured push destination.", 'err'); out('Either specify the URL from the command-line or configure a remote repository using: git remote add <name> <url>', 'dim'); return; }
-        if (!G.commits.length) { out("error: src refspec main does not match any", 'err'); out('You need a commit first. Run git commit -m "message".', 'dim'); return; }
-        var hasU = a.indexOf('-u') > -1 || a.indexOf('--set-upstream') > -1;
-        if (!G.upstream && !hasU) { out('fatal: The current branch main has no upstream branch.', 'err'); out('To push the current branch and set the remote as upstream, use: git push -u origin main', 'dim'); return; }
-        var first = !G.upstream;
-        if (G.pushed === G.commits.length) { w('Everything up-to-date'); return; }
-        w('Enumerating objects: ' + (Object.keys(G.head).length + 3) + ', done.'); w('Writing objects: 100%, done.');
-        w('To ' + G.remote); w(first ? ' * [new branch]      main -> main' : '   ' + G.commits[G.pushed].id + '..' + G.commits[G.commits.length - 1].id + '  main -> main');
-        if (first) w("branch 'main' set up to track 'origin/main'.");
-        G.upstream = true; G.pushed = G.commits.length;
-        w('(Pretend push: this practice terminal never contacts the internet.)', 'dim'); mark('push'); return;
-      }
-      if (sub === 'pull') { if (!G.remote) { out('fatal: No remote repository specified.', 'err'); return; } w('Already up to date.'); return; }
-      out("git: '" + sub + "' is not a git command in this practice terminal. Try git help.", 'err');
-    }
-
-    /* --- command dispatch --- */
-    function exec(c, a, w, wp, cmd) {
-      var flags = '', args = [];
-      var norm = c.replace(/\\/g, '/').replace(/^\.\//, '');
-      if (/^\.venv\/(bin|scripts)\/activate(\.ps1|\.bat)?$/i.test(norm)) { activate(norm); return; }
-      if (c === 'dir') c = 'ls';
-      if (c === 'cls') c = 'clear';
-      if (['ls', 'mkdir', 'rm', 'cat', 'touch'].indexOf(c) > -1) {
-        a.forEach(function (x) { if (x.length > 1 && x[0] === '-') flags += x.slice(1); else args.push(x); });
-      } else { args = a; }
-      switch (c) {
-        case 'help':
-          w('Commands: pwd, ls, ls -a, cd <folder>, cat <file>, echo, mkdir, touch, clear, history', 'dim');
-          w('Python: python -m venv .venv, python -m pip install ..., python -m pip list, deactivate, which python', 'dim');
-          w('Git: git config, init, status, add, commit, log, remote, push, reset', 'dim');
-          w('Tips: Tab completes names. Up and Down arrows bring back earlier commands. Ctrl+L clears the screen.', 'dim'); break;
-        case 'clear': scr.textContent = ''; break;
-        case 'pwd': w(pstr(S.cwd)); break;
-        case 'whoami': w('learner'); break;
-        case 'history': S.hist.forEach(function (h, n) { w(('     ' + (n + 1)).slice(-5) + '  ' + h); }); break;
-        case 'echo': w(args.join(' ')); break;
-        case 'code': w('(In class this opens VS Code. Here it does nothing.)', 'dim'); break;
-        case 'which':
-          if (args[0] === 'python' || args[0] === 'python3' || args[0] === 'py') w(S.active ? PROJ_STR + '/.venv/bin/python' : '/usr/bin/python3');
-          else if (args[0] === 'git') w('/usr/bin/git'); else out(args[0] + ' not found', 'err');
-          break;
-        case 'deactivate':
-          if (S.active) { S.active = false; mark('deact'); } else out('bash: deactivate: command not found (you are not inside an environment)', 'err');
-          break;
-        case 'source': case '.':
-          if (!args.length) { out('bash: ' + c + ': filename argument required', 'err'); break; }
-          activate(args[0]); break;
-        case 'ls': {
-          var all = flags.indexOf('a') > -1, targets = args.length ? args : [''], ok = true;
-          targets.forEach(function (tg, ti) {
-            var n = nodeAt(resolve(tg)), items;
-            if (!n) { out("ls: cannot access '" + tg + "': No such file or directory", 'err'); ok = false; return; }
-            if (targets.length > 1) { if (ti) w(''); w(tg + ':'); }
-            if (n.type === 'file') items = [{ n: tg, node: n }];
-            else {
-              items = Object.keys(n.kids).filter(function (k) { return all || k[0] !== '.'; }).sort().map(function (k) { return { n: k, node: n.kids[k] }; });
-              if (all) items = [{ n: '.', node: n }, { n: '..', node: n }].concat(items);
-            }
-            if (items.length) wp(items.map(function (it) { var d = it.node.type === 'dir'; return { t: d ? it.n + '/' : it.n, dir: d }; }), '   ');
-          });
-          break;
-        }
-        case 'cd': {
-          if (a.length > 1) { out('bash: cd: too many arguments', 'err'); break; }
-          var tg2 = a[0], np;
-          if (!tg2 || tg2 === '~') np = HOMEP.slice(); else if (tg2 === '-') np = S.prev.slice(); else np = resolve(tg2);
-          var nd = nodeAt(np);
-          if (!nd) out('cd: no such folder: ' + tg2 + '. Try ls to see what is here.', 'err');
-          else if (nd.type === 'file') out('cd: ' + tg2 + ' is a file, not a folder', 'err');
-          else { S.prev = S.cwd; S.cwd = np; if (eq(S.cwd, PROJ)) mark('cd'); }
-          break;
-        }
-        case 'cat':
-          if (!args.length) { out('cat: missing file name (try: cat requirements.txt)', 'err'); break; }
-          args.forEach(function (tg) { var s = readFile(tg, 'cat'); if (s !== null) linesOf(s).forEach(function (l) { w(l); }); });
-          break;
-        case 'mkdir':
-          if (!args.length) { out('mkdir: missing operand', 'err'); break; }
-          args.forEach(function (tg) {
-            var p = resolve(tg), ex = nodeAt(p);
-            if (!p.length || ex) { out("mkdir: cannot create directory '" + tg + "': File exists", 'err'); return; }
-            var sp = split(p); if (!sp.dir) { out("mkdir: cannot create directory '" + tg + "': No such file or directory", 'err'); return; }
-            sp.dir.kids[sp.name] = mkd();
-          });
-          break;
-        case 'touch':
-          if (!args.length) { out('touch: missing file operand', 'err'); break; }
-          args.forEach(function (tg) {
-            var p = resolve(tg), n = nodeAt(p); if (n) { n.t = Date.now(); return; }
-            var sp = split(p); if (!sp.dir) { out("touch: cannot touch '" + tg + "': No such file or directory", 'err'); return; }
-            sp.dir.kids[sp.name] = mkf('');
-          });
-          break;
-        case 'rm': {
-          var rec = /[rR]/.test(flags);
-          if (!args.length) { out('rm: missing operand', 'err'); break; }
-          args.forEach(function (tg) {
-            var p = resolve(tg), n = nodeAt(p);
-            if (!n) { out("rm: cannot remove '" + tg + "': No such file or directory", 'err'); return; }
-            if (p.length < 3) { out("rm: refusing to remove '" + tg + "' in the practice terminal", 'err'); return; }
-            if (n.type === 'dir' && !rec) { out("rm: cannot remove '" + tg + "': Is a directory (use rm -r)", 'err'); return; }
-            if (isPrefix(p, S.cwd)) { out("rm: refusing to remove '" + tg + "' because you are inside it", 'err'); return; }
-            delete nodeAt(p.slice(0, -1)).kids[p[p.length - 1]];
-          });
-          break;
-        }
-        case 'python': case 'python3': case 'py': pyCmd(c, a, w); break;
-        case 'pip': pipCmd(a, w); break;
-        case 'git': gitCmd(a, w); break;
-        default:
-          if (cmd.indexOf('(') > -1) { out('That looks like Python code. This is the terminal prompt, where terminal commands go.', 'dim'); }
-          out(c + ': command not found', 'err');
-      }
-    }
-
-    function run(cmd) {
-      echoLine(cmd);
-      try {
-        var t = tokenize(cmd);
-        if (t.err) { out('bash: ' + t.err, 'err'); }
-        else if (t.length) {
-          var redir = null, args = [], bad = false;
-          for (var i = 0; i < t.length; i++) {
-            if (t[i].op) {
-              var tg = t[i + 1];
-              if (!tg || tg.op) { out("bash: syntax error near unexpected token `newline'", 'err'); bad = true; break; }
-              redir = { mode: t[i].v, file: tg.v }; i++;
-            } else args.push(t[i].v);
-          }
-          if (!bad && args.length) {
-            var buf = null, w = out, wp = outParts;
-            if (redir) { buf = []; w = function (x) { buf.push(x); }; wp = function (parts, sep) { buf.push(parts.map(function (p) { return p.t; }).join(sep || '')); }; }
-            exec(args[0], args.slice(1), w, wp, cmd);
-            if (redir) {
-              var tp = resolve(redir.file), tn = nodeAt(tp), text = buf.length ? buf.join('\n') + '\n' : '';
-              if (tn && tn.type === 'dir') out('bash: ' + redir.file + ': Is a directory', 'err');
-              else {
-                var sp = tp.length ? split(tp) : { dir: null };
-                if (!sp.dir) out('bash: ' + redir.file + ': No such file or directory', 'err');
-                else if (tn) { tn.content = (redir.mode === '>>' ? tn.content : '') + text; tn.t = Date.now(); }
-                else sp.dir.kids[sp.name] = mkf(text);
-              }
-            }
-          }
-        }
-      } catch (err) { out('bash: something went wrong in the practice terminal. Try the reset button.', 'err'); }
-      if (cfg.after) cfg.after(S, mark, nodeAt, PROJ);
-      prm.textContent = promptText(); renderTree(); scr.scrollTop = scr.scrollHeight;
-    }
-
-    /* --- tab completion --- */
-    function lcp(s) { var p = s[0]; s.forEach(function (x) { while (x.indexOf(p) !== 0) p = p.slice(0, -1); }); return p; }
-    function toEnd() { setTimeout(function () { var n = inp.value.length; try { inp.setSelectionRange(n, n); } catch (e) { /* ignore */ } }, 0); }
-    function complete() {
-      var v = inp.value, m = v.match(/^([\s\S]*?)(\S*)$/), head = m[1], word = m[2], cands = [], base = '', part = word, listing = [];
-      if (head.trim() === '') {
-        cands = CMDS.filter(function (c) { return c.indexOf(word) === 0; }); listing = cands.map(function (c) { return { t: c }; });
-      } else {
-        var sl = word.lastIndexOf('/'); base = sl > -1 ? word.slice(0, sl + 1) : ''; part = word.slice(sl + 1);
-        var dn = nodeAt(resolve(base));
-        if (!dn || dn.type !== 'dir') return;
-        Object.keys(dn.kids).sort().forEach(function (k) {
-          if (k.indexOf(part) === 0 && (part[0] === '.' || k[0] !== '.')) { var d = dn.kids[k].type === 'dir'; cands.push(d ? k + '/' : k); listing.push({ t: d ? k + '/' : k, dir: d }); }
-        });
-      }
-      if (!cands.length) return;
-      var cp = lcp(cands);
-      if (cands.length === 1) { inp.value = head + base + cp + (cp.slice(-1) === '/' ? '' : ' '); S.lastTab = null; }
-      else if (cp.length > part.length) { inp.value = head + base + cp; S.lastTab = null; }
-      else if (S.lastTab === v) { echoLine(v); outParts(listing, '   '); }
-      else { S.lastTab = v; }
-      toEnd();
-    }
-
-    function start() {
-      S = newState();
-      scr.textContent = '';
-      $$('li', taskEl).forEach(function (li) { li.classList.remove('done'); $('.ck', li).textContent = ''; });
-      cfg.welcome.forEach(function (l) { out(l, 'dim'); });
-      prm.textContent = promptText(); renderTree(); inp.value = '';
-    }
-    inp.addEventListener('keydown', function (e) {
-      if (e.key !== 'Tab') S.lastTab = null;
-      if (e.key === 'Enter') { var v = inp.value; inp.value = ''; S.draft = ''; if (v.trim()) { S.hist.push(v); } S.hi = S.hist.length; run(v); }
-      else if (e.key === 'ArrowUp') { if (S.hi === S.hist.length) S.draft = inp.value; if (S.hi > 0) { S.hi--; inp.value = S.hist[S.hi]; } e.preventDefault(); toEnd(); }
-      else if (e.key === 'ArrowDown') { if (S.hi < S.hist.length - 1) { S.hi++; inp.value = S.hist[S.hi]; } else { S.hi = S.hist.length; inp.value = S.draft; } e.preventDefault(); toEnd(); }
-      else if (e.key === 'Tab') { if (inp.value.trim() !== '') { e.preventDefault(); complete(); } }
-      else if (e.ctrlKey && (e.key === 'l' || e.key === 'L')) { e.preventDefault(); scr.textContent = ''; }
-      else if (e.ctrlKey && (e.key === 'u' || e.key === 'U')) { e.preventDefault(); inp.value = ''; }
-    });
-    box.addEventListener('click', function () { if (!window.getSelection || String(window.getSelection()) === '') inp.focus(); });
-    $(cfg.reset).addEventListener('click', start);
-    start();
-    return { run: run, state: function () { return S; } };
-  }
-
-  /* --- Terminal A: virtual environment --- */
-  function fsA() {
-    return mkd({ home: mkd({ learner: mkd({
-      'meridian-workbench': mkd({
-        'pyproject.toml': mkf('[project]\nname = "meridian-workbench"\nversion = "0.1.0"\nrequires-python = ">=3.11"\ndependencies = ["python-dotenv==1.0.1"]\n'),
-        'requirements.txt': mkf('-e .\npython-dotenv==1.0.1\nruff==0.6.9\n'),
-        src: mkd({ meridian_workbench: mkd({ '__init__.py': mkf('"""Meridian Case Intake Workbench."""\n') }) }),
-        data: mkd({ 'cases.csv': mkf('case_id,order_id,order_status,promised_date\nC-1001,O-5001,DELIVERED,2025-03-06\n') })
-      }),
-      Downloads: mkd(), Documents: mkd()
-    }) }) });
-  }
-  window.termA = makeTerm({
-    box: '#termA', tree: '#treeA', tasks: '#tasksA', reset: '#resetA', fs: fsA, start: HOMEP.slice(),
-    taskIds: ['cd', 'venv', 'act', 'prove', 'install', 'list', 'deact'],
-    welcome: ['Welcome to the practice terminal. Type help to see what you can do.', 'Tip: press Tab to complete a name, and the Up arrow to repeat a command.']
-  });
-
-  /* --- Terminal B: Git --- */
-  function fsB() {
-    return mkd({ home: mkd({ learner: mkd({
-      'meridian-workbench': mkd({
-        'README.md': mkf('# Meridian Case Intake Workbench\n'),
-        'pyproject.toml': mkf('[project]\nname = "meridian-workbench"\nversion = "0.1.0"\n'),
-        'requirements.txt': mkf('-e .\npython-dotenv==1.0.1\nruff==0.6.9\n'),
-        '.env': mkf('MERIDIAN_LLM_API_KEY=pretend-secret-value\n'),
-        '.env.example': mkf('# Copy to .env. Never commit .env.\nMERIDIAN_LLM_API_KEY=\n'),
-        '.venv': mkd({ 'pyvenv.cfg': mkf('version = 3.12.3\n'), bin: mkd({ python: mkf('') }) }),
-        config: mkd({ 'settings.toml': mkf('[rules]\nbatch_date = "2025-03-10"\n') }),
-        data: mkd({ 'cases.csv': mkf('case_id,order_id,order_status,promised_date\nC-1001,O-5001,DELIVERED,2025-03-06\n') }),
-        outputs: mkd({ 'attention_report.json': mkf('[]\n') }),
-        src: mkd({ meridian_workbench: mkd({ '__init__.py': mkf('"""Meridian Case Intake Workbench."""\n'), 'rules.py': mkf('CLOSED_STATUSES = {"DELIVERED", "CANCELLED"}\n') }) }),
-        tests: mkd({ 'check_rules.py': mkf('print("All rule checks passed")\n') })
-      })
-    }) }) });
-  }
-  window.termB = makeTerm({
-    box: '#termB', tree: '#treeB', tasks: '#tasksB', reset: '#resetB', fs: fsB, start: PROJ.slice(),
-    taskIds: ['cfg', 'init', 'status', 'ignore', 'add', 'commit', 'log', 'push'],
-    welcome: ['You are inside the project folder: meridian-workbench. Type help to see what you can do.', 'This Git is a pretend one. It never contacts the internet.'],
-    after: function (S, mark, nodeAt, PROJ_) {
-      var n = nodeAt(PROJ_.concat('.gitignore'));
-      if (n && n.type === 'file') {
-        var ls = n.content.split('\n').map(function (l) { return l.trim(); });
-        if ((ls.indexOf('.venv/') > -1 || ls.indexOf('.venv') > -1) && ls.indexOf('.env') > -1) mark('ignore');
-      }
-    }
-  });
 
   /* ---------- final quiz ---------- */
   function quiz(el, items, scoreEl) {
@@ -1564,13 +782,11 @@ __pycache__/
     });
   }
   quiz($('#finalQuiz'), [
-    { q: 'What does it mean for a project to be reproducible?', o: ['It runs fast', 'Someone else can follow written steps on their own machine and get the same result', 'It has no bugs', 'It only works on your laptop'], a: 1, e: 'Reproducible means a stranger can follow the steps and get the same result.' },
-    { q: 'Your prompt has no (.venv) and you run python -m pip install python-dotenv==1.0.1. Where does the package go?', o: ['Into the project’s .venv anyway', 'Into your computer’s global Python', 'Nowhere, pip refuses', 'Into the src folder'], a: 1, e: 'pip installs into whichever Python runs it. Without activation, that is the global Python.' },
-    { q: 'What does the == in python-dotenv==1.0.1 do?', o: ['Compares two files', 'Pins the exact version', 'Installs the newest version', 'Uninstalls the package'], a: 1, e: 'Two equals signs pin the exact version, so everyone gets the same release.' },
-    { q: 'Which of these is a rule, so it stays in code and not in a settings file?', o: ['The batch date', 'The data folder name', 'DELIVERED and CANCELLED are closed statuses', 'An API key'], a: 2, e: 'The closed statuses are a business decision that needs review and a test, so they live in code.' },
-    { q: 'Which pair should go in .gitignore?', o: ['README.md and src/', '.env and .venv/', 'pyproject.toml and requirements.txt', 'tests/ and data/'], a: 1, e: '.env may hold a secret, and .venv/ can be rebuilt from requirements.txt. Neither belongs in Git.' },
-    { q: 'You have saved a snapshot with git commit. Which command sends it to GitHub?', o: ['git add', 'git pull', 'git status', 'git push'], a: 3, e: 'Commit saves a snapshot on your computer. Push sends it to GitHub.' },
-    { q: 'A partner clones your project and sees ModuleNotFoundError: No module named \'meridian_workbench\'. What do you check first?', o: ['Whether the virtual environment is activated and requirements.txt was installed', 'Whether their keyboard works', 'Whether the README has a title', 'Whether the batch date is correct'], a: 0, e: 'The project is only importable after the install, and only inside the Python that received it.' }
+    { q: 'What does it mean for a project to be reproducible?', o: ['It runs noticeably faster on any computer you try', 'It was tested carefully by the person who wrote it', 'It is small enough to email as one single file', 'A stranger follows your steps and gets your result'], a: 3, e: 'Reproducible means someone else can follow written steps on their own machine and get the same result.' },
+    { q: 'Your prompt has no (.venv) and you run python -m pip install python-dotenv==1.0.1. Where does the package go?', o: ['Into your computer\u2019s global Python', 'Into .venv, since the folder is nearby', 'Nowhere, because pip refuses to run', 'Into src/, beside the code that uses it'], a: 0, e: 'pip installs into whichever Python runs it. Without activation, that is the global Python.' },
+    { q: 'Which of these is a rule, so it stays in code and not in a settings file?', o: ['The batch date chosen for each run', 'The folder name where data files live', 'DELIVERED and CANCELLED mean closed', 'The API key for a model service'], a: 2, e: 'The closed statuses are a business decision that needs review and a test, so they live in code.' },
+    { q: 'Which pair should go in .gitignore?', o: ['README.md and the src folder', '.env and the .venv folder', 'pyproject.toml and requirements.txt', 'tests/ and the data folder'], a: 1, e: '.env may hold a secret, and .venv can be rebuilt from requirements.txt. Neither belongs in Git.' },
+    { q: 'You have saved a snapshot with git commit. Which command sends it to GitHub?', o: ['git add', 'git pull', 'git push', 'git status'], a: 2, e: 'Commit saves a snapshot on your computer. Push sends it to GitHub.' }
   ], $('#finalScore'));
 
   $$('#finalChecks li').forEach(function (li) {
